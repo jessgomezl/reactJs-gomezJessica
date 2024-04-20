@@ -10,12 +10,13 @@ import {
     MenuGroup,
     MenuOptionGroup,
     MenuDivider,
+    Heading,
   } from '@chakra-ui/react'
 
 const NavBar = () => {
   return (
     <div>
-        <img src={banner} alt="logo"/>
+        <Heading> <img src={banner} /></Heading>
         <Menu isLazy>
             <MenuButton>CATEGORIAS</MenuButton>
         <MenuList>
