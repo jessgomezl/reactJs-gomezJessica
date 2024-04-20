@@ -6,28 +6,25 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
     Heading,
+    Box,
   } from '@chakra-ui/react'
+  import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div>
+    <Box>
         <Heading> <img src={banner} /></Heading>
         <Menu isLazy>
             <MenuButton>CATEGORIAS</MenuButton>
         <MenuList>
-            {/* MenuItems are not rendered unless Menu is open */}
-            <MenuItem>BELLEZA</MenuItem>
-            <MenuItem>ACCESORIOS</MenuItem>
-            <MenuItem>MARROQUINERIA</MenuItem>
+            <MenuItem><Link to='/categoria/belleza'>BELLEZA</Link></MenuItem>
+            <MenuItem><Link to='/categoria/accesorios'>ACCESORIOS</Link></MenuItem>
+            <MenuItem><Link to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
         </MenuList>
         </Menu>
         <CartWidget/>
-    </div>
+    </Box>
   )
 }
 

@@ -321,3 +321,15 @@ export const getProducts = () => {
         }, 2000);
     });
 };
+
+export const getProductsByCategory = (category) => {
+
+    return new Promise((resolve) => {
+        const productosFiltrados = productos.filter(
+            (prod) => prod.categoria === category
+        );
+        setTimeout(() => {
+            resolve(productosFiltrados);
+        }, 2000);
+    });
+};
