@@ -18,8 +18,8 @@ const NavBar = () => {
         <Menu isLazy>
             <MenuButton>CATEGORIAS</MenuButton>
         <MenuList>
-            <MenuItem><Link to='/categoria/belleza'>BELLEZA</Link></MenuItem>
-            <MenuItem><Link to='/categoria/accesorios'>ACCESORIOS</Link></MenuItem>
+            <MenuItem><Link to='/categoria/belleza'>ACCESORIOS</Link></MenuItem>
+            <MenuItem><Link to='/categoria/accesorios'>BELLEZA</Link></MenuItem>
             <MenuItem><Link to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
         </MenuList>
         </Menu>

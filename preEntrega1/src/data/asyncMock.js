@@ -1,6 +1,6 @@
 export const productos = [
     {
-        id: "accesorios-1",
+        id: 1,
         nombre: "abanicos",
         categoria: "accesorios",
         img: "../src/assets/image/abanico.jpg",
@@ -8,7 +8,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-2",
+        id: 2,
         nombre: "billetera animal print",
         categoria: "accesorios",
         img: "../src/assets/image/billetera-1.jpg",
@@ -16,7 +16,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-3",
+        id: 3,
         nombre: "billetera negra",
         categoria: "accesorios",
         img: "../src/assets/image/billetera-2.jpg",
@@ -24,7 +24,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-4",
+        id: 4,
         nombre: "billetera roja",
         categoria: "accesorios",
         img: "../src/assets/image/billetera-3.jpg",
@@ -32,7 +32,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-5",
+        id: 5,
         nombre: "billetera azul",
         categoria: "accesorios",
         img: "../src/assets/image/billetera-4.jpg",
@@ -41,7 +41,7 @@ export const productos = [
 
     },
     {
-        id: "accesorios-6",
+        id: 6,
         nombre: "billetera chocolate",
         categoria: "accesorios",
         img: "../src/assets/image/billetera-5.jpg",
@@ -49,7 +49,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-7",
+        id: 7,
         nombre: "billetera cuero",
         categoria: "accesorios",
         img: "../src/assets/image/billetera-6.jpg",
@@ -57,7 +57,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-8",
+        id: 8,
         nombre: "monedero bordo",
         categoria: "accesorios",
         img: "../src/assets/image/monedero-1.jpg",
@@ -65,7 +65,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-9",
+        id: 9,
         nombre: "monedero cuerina",
         categoria: "accesorios",
         img: "../src/assets/image/monedero-2.jpg",
@@ -73,7 +73,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-10",
+        id: 10,
         nombre: "monedero rojo",
         categoria: "acceosrios",
         img: "../src/assets/image/monedero-3.jpg",
@@ -81,7 +81,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-11",
+        id: 11,
         nombre: "organizador",
         categoria: "accesorios",
         img: "../src/assets/image/organizador.jpg",
@@ -89,7 +89,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-12",
+        id: 12,
         nombre: "organizador de viaje",
         categoria: "accesorios",
         img: "../src/assets/image/organizadores-de-viaje.jpg",
@@ -97,7 +97,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-13",
+        id: 13,
         nombre: "paraguas lisos",
         categoria: "accesorios",
         img: "../src/assets/image/paraguas-lisos.jpg",
@@ -105,7 +105,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-14",
+        id: 14,
         nombre: "paraguas estampados",
         categoria: "accesorios",
         img: "../src/assets/image/paraguas-estampados.jpg",
@@ -113,7 +113,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "accesorios-15",
+        id: 15,
         nombre: "portacelulares",
         categoria: "accesorios",
         img: "../src/assets/image/portacelular.jpg",
@@ -121,7 +121,7 @@ export const productos = [
         stock:5,
     },
     {
-        id: "belleza-16",
+        id: 16,
         nombre: "brocha pincel",
         categoria: "belleza",
         img: "../src/assets/image/brocha-1.jpg",
@@ -129,7 +129,7 @@ export const productos = [
         stock:5,
     },
     {
-        id: "belleza-17",
+        id: 17,
         nombre: "brocha ",
         categoria: "belleza",
         img: "../src/assets/image/brocha-2.jpg",
@@ -137,7 +137,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-18",
+        id: 18,
         nombre: "brocha",
         categoria: "belleza",
         img: "../src/assets/image/brocha-3.jpg",
@@ -145,7 +145,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-19",
+        id: 19,
         nombre: "cepillo ",
         categoria: "belleza",
         img: "../src/assets/image/cepillo-1.jpg",
@@ -153,7 +153,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-20",
+        id: 20,
         nombre: "cepillo cuadrado",
         categoria: "belleza",
         img: "../src/assets/image/cepillo-cuadrado.jpg",
@@ -161,7 +161,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id:"belleza-21",
+        id: 21,
         nombre: "cepillo redondo",
         categoria: "belleza",
         img: "../src/assets/image/cepillo-redondo.jpg",
@@ -169,7 +169,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-22",
+        id: 22,
         nombre: "espejos de bolsillo",
         categoria: "belleza",
         img: "../src/assets/image/espejo-1.jpg",
@@ -177,7 +177,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-23",
+        id: 23,
         nombre: "peine con espejo",
         categoria: "belleza",
         img: "../src/assets/image/peine-espejo.jpg",
@@ -185,7 +185,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-24",
+        id: 24,
         nombre: "peines",
         categoria: "belleza",
         img: "../src/assets/image/peines-1.jpg",
@@ -193,7 +193,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-25",
+        id: 25,
         nombre: "peine cola de rata",
         categoria: "belleza",
         img: "../src/assets/image/peines-2.jpg",
@@ -201,7 +201,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-26",
+        id: 26,
         nombre: "peine ",
         categoria: "belleza",
         img: "../src/assets/image/peines-3.jpg",
@@ -209,7 +209,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-27",
+        id: 27,
         nombre: "portacosmeticos flor",
         categoria: "belleza",
         img: "../src/assets/image/portacosmeticos-1.jpg",
@@ -217,7 +217,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-28",
+        id: 28,
         nombre: "portacosmeticos abeja",
         categoria: "belleza",
         img: "../src/assets/image/portacosmetico-2.jpg",
@@ -225,7 +225,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-29",
+        id: 29,
         nombre: "portacosmeticos acua",
         categoria: "belleza",
         img: "../src/assets/image/portacosmetico-3.jpg",
@@ -233,7 +233,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "belleza-30",
+        id: 30,
         nombre: "portacosmeticos flores",
         categoria: "belleza",
         img: "../src/assets/image/portacosmetico.4.jpg",
@@ -241,7 +241,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-31",
+        id: 31,
         nombre: "alicate",
         categoria: "manicuria",
         img: "../src/assets/image/alicate-1.jpg",
@@ -249,7 +249,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-32",
+        id: 32,
         nombre: "alicate",
         categoria: "manicuria",
         img: "../src/assets/image/alicate-2.jpg",
@@ -257,7 +257,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-33",
+        id: 33,
         nombre: "bloque para uñas",
         categoria: "manicuria",
         img: "../src/assets/image/bloque-para-uñas-1.jpg",
@@ -265,7 +265,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-34",
+        id: 34,
         nombre: "bloque para uñas",
         categoria: "manicuria",
         img: "../src/assets/image/bloque-para-uñas-2.jpg",
@@ -273,7 +273,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-35",
+        id: 35,
         nombre: "kit manicuria bebe",
         categoria: "manicuria",
         img: "../src/assets/image/kit-manicuria-bebe.jpg",
@@ -281,7 +281,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-36",
+        id: 36,
         nombre: "set manicuria de 5 piezas",
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-5-piezas.jpg",
@@ -289,7 +289,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-37",
+        id: 37,
         nombre: "set manicuria de 6 piezas",
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-6-piezas.jpg",
@@ -297,7 +297,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-38",
+        id: 38,
         nombre: "set manicuria de 9 piezas",
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-9-piezas.jpg",
@@ -305,7 +305,7 @@ export const productos = [
         stock: 5,
     },
     {
-        id: "manicuria-39",
+        id: 39,
         nombre: "set manicuria de 10 piezas",
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-10-piezas.jpg",
@@ -330,6 +330,15 @@ export const getProductsByCategory = (category) => {
         );
         setTimeout(() => {
             resolve(productosFiltrados);
+        }, 2000);
+    });
+};
+
+export const getProductById = (id) => {
+    return new Promise ((resolve) => {
+        const productoFiltrado = productos.find((prod) => prod.id === parseInt(id));
+        setTimeout(() => { 
+            resolve(productoFiltrado);
         }, 2000);
     });
 };

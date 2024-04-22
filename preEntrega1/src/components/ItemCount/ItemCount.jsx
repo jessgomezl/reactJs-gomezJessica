@@ -1,24 +1,18 @@
-import { Box, Button, Heading } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import { Button, Flex, Heading } from '@chakra-ui/react'
+import React from 'react'
+import { useState } from 'react'
+import useCounter from '../../hooks/useCounter'
 
-const ItemCount = () => {
-    const [count,setCount] = useState(1)
-
-    const stock = 5
-
-  const incrementar = () => {
-    count < stock && setCount(count + 1)
-  }
-  const decrementar = () => {
-    count > 1 && setCount(count - 1)
-  }
+const ItemCount = ({ stock, initialValue, onAdd}) => {
+  const { count, incrementar, decrementar } = useCounter(initialValue, stock)
 
   return (
-    <Box>
+    <Flex>
       <Button onClick={decrementar}>-</Button>
       <Heading>{count}</Heading>
       <Button onClick={incrementar}>+</Button>
-    </Box>
+      <Button>Agregar al carrito</Button>
+    </Flex>
   )
 }
 
