@@ -1,8 +1,9 @@
 import React from 'react'
+import error from '../../assets/image/error.png'
 
 const PageNotFound = () => {
   return (
-    <img src='https://storyset.com/illustration/404-error-with-a-landscape/bro#7E57C2FF&hide=&hide=complete'/>
+    <img src={error}/>
   )
 }
 
