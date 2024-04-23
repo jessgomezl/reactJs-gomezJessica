@@ -6,12 +6,12 @@ import ItemCount from '../ItemCount/ItemCount';
 const ItemDetail = ({nombre, precio, stock, img}) => {
 
   return (
-    <Card maxW='sm'>
+    <Card >
         <CardBody>
             <Image
-                src={img}
-                alt={nombre}
-                borderRadius='lg'
+              src={img}
+              alt={nombre}
+              borderRadius='lg'
             />
             <Stack mt='6' spacing='3'>
             <Heading size='md'>{nombre}</Heading>

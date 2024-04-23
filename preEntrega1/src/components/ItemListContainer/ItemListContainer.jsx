@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, GridItem } from "@chakra-ui/react";
 import React, { useState, useEffect } from 'react';
 import { getProducts, getProductsByCategory } from "../../data/asyncMock";
 import ItemList from '../ItemList/ItemList';
