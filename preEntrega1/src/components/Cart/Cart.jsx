@@ -9,6 +9,7 @@ import {
   Th,
   Td,
   TableContainer,
+  Button,
 } from '@chakra-ui/react'
 import { RiDeleteBinFill } from "react-icons/ri";
 
@@ -25,7 +26,7 @@ const Cart = () => {
         <Th>Cantidad</Th>
         <Th>Precio</Th>
         <Th>Subtotal</Th>
-        <Th><RiDeleteBinFill /></Th>
+        <Th></Th>
       </Tr>
     </Thead>
     <Tbody>
@@ -37,22 +38,26 @@ const Cart = () => {
             <Td>{prod.quantity}</Td>
             <Td>{prod.precio}</Td>
             <Td>{prod.precio * prod.quantity}</Td>
-            <Td>{}</Td>
+            <Td> 
+              <Button onClick={() => removeItem(prod.id)}>
+                <RiDeleteBinFill />
+              </Button>
+            </Td>
           </Tr>
         ))
       }
-      
-      <Tr>
-        <Td>feet</Td>
-        <Td>centimetres (cm)</Td>
-        <Td isNumeric>30.48</Td>
-      </Tr>
     </Tbody>
     <Tfoot>
       <Tr>
-        <Th>To convert</Th>
-        <Th>into</Th>
-        <Th isNumeric>multiply by</Th>
+        <Th>Total: ${getTotal()}</Th>
+        <Th>
+          <Button onClick={() => clearCart()}>
+            Vaciar Carrito
+          </Button>
+        </Th>
+        <Th>
+          Finalizar Compra
+        </Th>
       </Tr>
     </Tfoot>
   </Table>
