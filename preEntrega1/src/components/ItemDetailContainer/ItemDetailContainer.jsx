@@ -5,6 +5,7 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 
 const ItemDetailContainer = () => {
     const [ producto, setProducto ] = useState([])
+    const [ loading, setLoading ] = useState(true)
     const { productId } = useParams()
 
     const navigate = useNavigate ()
@@ -20,12 +21,18 @@ const ItemDetailContainer = () => {
           }
         })
         .catch((error) => console.log(error))
+        .finally (() => setLoading(false))
     }, [productId])
 
   return (
-    <div>
-      <ItemDetail {...producto}/>
-    </div>
+    <>
+      {
+        loading ?
+          <BeatLoader color="#a336d6" />
+        :
+          <ItemDetail {...producto}/>
+      }
+    </>
   )
 }
 

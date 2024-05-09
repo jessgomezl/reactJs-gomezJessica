@@ -22,16 +22,14 @@ const ItemListContainer = ({title}) => {
 
   return (
     <Box>
-      <Heading>{title}</Heading>
       {
         loading ?
         <BeatLoader color="#a336d6" />
         :
         <ItemList products = {products} />
       }
-      
     </Box>
   )
-};
+}
 
 export default ItemListContainer;

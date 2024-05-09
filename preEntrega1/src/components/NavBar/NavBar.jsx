@@ -29,8 +29,10 @@ const NavBar = () => {
             <MenuItem><Link to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
         </MenuList>
         </Menu>
-        <CartWidget className={styles.carrito}/>
       </Flex>
+      <Link to='/cart'>
+        <CartWidget className={styles.carrito}/>
+      </Link>
     </Box>
   )
 }
