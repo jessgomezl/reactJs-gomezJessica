@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getProductById } from '../../data/asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
+import {BeatLoader} from 'react-spinners'
 
 const ItemDetailContainer = () => {
     const [ producto, setProducto ] = useState([])
