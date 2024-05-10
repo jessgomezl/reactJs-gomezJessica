@@ -1,4 +1,4 @@
-import React, { Children, createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 
 const Context = createContext()
 
@@ -50,7 +50,7 @@ export const ContextProvider = ({ children }) => {
         return total
     }
   return (
-    <ContextProvider
+    <Context.Provider
         value={{
             cart,
             addItem,
@@ -59,9 +59,9 @@ export const ContextProvider = ({ children }) => {
             clearCart,
             getQuantity
         }}
-    >
-        {Children}
-    </ContextProvider>
+        >
+        {children}
+    </Context.Provider>
   )
 
 
