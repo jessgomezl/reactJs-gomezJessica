@@ -11,10 +11,10 @@ import {
   TableContainer,
   Button,
   Heading,
-  Link,
+  Link as ChakraLink,
 } from '@chakra-ui/react'
 import { RiDeleteBinFill } from "react-icons/ri";
-import { Link } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const { cart, getTotal, removeItem, clearCart } = useContext(Context)
