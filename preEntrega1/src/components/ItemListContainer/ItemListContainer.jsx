@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getProducts, getProductsByCategory } from "../../data/asyncMock";
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
-import { BeatLoader } from "react-spinners";
+import { PropagateLoader } from "react-spinners";
 
 const ItemListContainer = ({title}) => {
   const [ products, setProducts ] = useState([])
@@ -24,7 +24,7 @@ const ItemListContainer = ({title}) => {
     <Box>
       {
         loading ?
-        <BeatLoader color="#a336d6" />
+        <PropagateLoader color="#c936d6" />
         :
         <ItemList products = {products} />
       }
