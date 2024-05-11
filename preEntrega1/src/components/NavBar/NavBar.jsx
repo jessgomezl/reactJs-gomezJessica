@@ -24,8 +24,8 @@ const NavBar = () => {
         <Menu isLazy>
             <MenuButton className={styles.menubutton} >CATEGORIAS</MenuButton>
         <MenuList className={styles.menulist}>
-            <MenuItem><Link to='/categoria/belleza'>ACCESORIOS</Link></MenuItem>
-            <MenuItem><Link to='/categoria/accesorios'>BELLEZA</Link></MenuItem>
+            <MenuItem><Link to='/categoria/accesorios'>ACCESORIOS</Link></MenuItem>
+            <MenuItem><Link to='/categoria/belleza'>BELLEZA</Link></MenuItem>
             <MenuItem><Link to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
         </MenuList>
         </Menu>
