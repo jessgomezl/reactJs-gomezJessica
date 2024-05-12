@@ -18,12 +18,11 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const { cart, getTotal, removeItem, clearCart } = useContext(Context)
-    console.log('cart', cart );
 if (cart.lenght === 0){
     return(
       <Div>
         <Heading>Todavia no agregaste productos</Heading>
-        <Link to='/'>Ver productos</Link>
+        <ChakraLink as={Link} to='/'>Ver productos</ChakraLink>
       </Div>
     )
 }else{
@@ -41,9 +40,9 @@ if (cart.lenght === 0){
       </Thead>
       <Tbody>
         {
-          cart.map((prod) => (
+          cart.map((prod, index) => (
             
-            <Tr key={prod.id}>
+            <Tr key={prod.id} >
               <Td>{prod. nombre}</Td>
               <Td>{prod.quantity}</Td>
               <Td>{prod.precio}</Td>
@@ -65,9 +64,9 @@ if (cart.lenght === 0){
               Vaciar Carrito
             </Button>
           </Th>
-          <Th>
+          <ChakraLink as={Link}>
             Finalizar Compra
-          </Th>
+          </ChakraLink>
         </Tr>
       </Tfoot>
     </Table>

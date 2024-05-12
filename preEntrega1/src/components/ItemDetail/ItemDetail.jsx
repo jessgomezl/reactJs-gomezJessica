@@ -4,6 +4,8 @@ import { Card, CardBody,Stack, Heading, Text, Image, Link as ChakraLink } from '
 import ItemCount from '../ItemCount/ItemCount';
 import Context from '../../context/CartContext';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2'
+
 
 const ItemDetail = ({nombre, precio, stock, img, id, descripcion, categoria}) => {
   const [ quantity, setQuantity ] = useState(0)
@@ -21,11 +23,19 @@ const ItemDetail = ({nombre, precio, stock, img, id, descripcion, categoria}) =>
     }
     setQuantity(quantity)
     addItem(item, quantity)
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Agregaste ${quantity} unidades`,
+      showConfirmButton: false,
+      timer: 1500
+    });
   }
 
   return (
     <>
     <Card >
+    <Heading size='md'>{categoria}</Heading>
       <CardBody>
         <Image
           src={img}
@@ -34,6 +44,9 @@ const ItemDetail = ({nombre, precio, stock, img, id, descripcion, categoria}) =>
         />
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{nombre}</Heading>
+          <Text color='blue.600' fontSize='2xl'>
+              {descripcion}
+            </Text>
             <Text color='blue.600' fontSize='2xl'>
               ${precio}
             </Text>
@@ -43,7 +56,7 @@ const ItemDetail = ({nombre, precio, stock, img, id, descripcion, categoria}) =>
         quantity > 0 ?
         <ChakraLink as={Link} to='/cart'>Ir al carrito</ChakraLink>
       :
-        <ItemCount stock={5} initialValue={1} onAdd={onAdd}/>
+        <ItemCount stock={stock} initialValue={1} onAdd={onAdd}/>
       }
     </Card>
   </>

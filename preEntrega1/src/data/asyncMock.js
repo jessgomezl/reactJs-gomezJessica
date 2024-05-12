@@ -141,7 +141,7 @@ export const productos = [
         categoria: "belleza",
         img: "../src/assets/image/brocha-1.jpg",
         precio: 2700,
-        descripcion:"Pincel de ojos de pelo sintético. Tamaño mediano estilo blender cónico en punta para parpados medianos.Por su formato se puede utilizar para depositar producto y para esfumar el sombreado.",
+        descripcion:"Pincel de ojos de pelo sintético. Tamaño mediano estilo blender cónico en punta para parpados medianos. Por su formato se puede utilizar para depositar producto y para esfumar el sombreado",
         stock:5,
     },
     {
@@ -150,7 +150,7 @@ export const productos = [
         categoria: "belleza",
         img: "../src/assets/image/brocha-2.jpg",
         precio: 2700,
-        descripcion:"Brocha para rubor o tonalizador. Pelo sintetico. Para aplicar o esfumar. Para modelar el rostro, contorno, afinaciones e iluminación con producto compacto, líquido, gel o crema.",
+        descripcion:"Brocha para rubor o tonalizador. Pelo sintetico. Para aplicar o esfumar. Para modelar el rostro, contorno, afinaciones e iluminación con producto compacto, líquido, gel o crema",
         stock: 5,
     },
     {
@@ -168,7 +168,7 @@ export const productos = [
         categoria: "belleza",
         img: "../src/assets/image/cepillo-1.jpg",
         precio: 2200,
-        descripcion:"Cepillo de pelo con espejo en el dorso.",
+        descripcion:"Cepillo de pelo con espejo en el dorso",
         stock: 5,
     },
     {
@@ -195,7 +195,7 @@ export const productos = [
         categoria: "belleza",
         img: "../src/assets/image/espejo-1.jpg",
         precio: 2900,
-        descripcion:"Espejo de cartera con un lado neutro y el otro con aumento ",
+        descripcion:"Espejo de cartera con un lado neutro y el otro con aumento",
         stock: 5,
     },
     {
