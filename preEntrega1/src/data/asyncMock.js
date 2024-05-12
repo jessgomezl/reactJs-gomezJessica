@@ -276,7 +276,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/alicate-1.jpg",
         precio: 1890,
-        descripcion:"",
+        descripcion:"Alicate para uñas corte curvo",
         stock: 5,
     },
     {
@@ -285,7 +285,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/alicate-2.jpg",
         precio: 1890,
-        descripcion:"",
+        descripcion:"Alicate para uñas",
         stock: 5,
     },
     {
@@ -294,7 +294,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/bloque-para-uñas-1.jpg",
         precio: 2900,
-        descripcion:"",
+        descripcion:"Bloque de forma curva de 4 caras tiene como objetivo exfoliar, suavizar y abrillantar tus uñas naturales.",
         stock: 5,
     },
     {
@@ -303,7 +303,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/bloque-para-uñas-2.jpg",
         precio: 2900,
-        descripcion:"",
+        descripcion:"Bloque de 4 caras tiene como objetivo exfoliar, suavizar y abrillantar tus uñas naturales.",
         stock: 5,
     },
     {
@@ -312,7 +312,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/kit-manicuria-bebe.jpg",
         precio: 2900,
-        descripcion:"",
+        descripcion:"Material de acero inoxidable de buena calidad, forma compacta, flexible y fácil de usar. Todo lo esencial para la higiene de tu bebe te lo brindamos en este excelente set que incluye un alicate cortauñas, una tijera de mango antideslizante, unas pinzas de punta suave y una lima de uñas de vidrio que no raspa las uñas ni daña la piel de alrededor.",
         stock: 5,
     },
     {
@@ -321,7 +321,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-5-piezas.jpg",
         precio: 2900,
-        descripcion:"",
+        descripcion:"Set manicuria con estuche organizador, contiene 5 piezas; tijera, alicate corte curvo, alicate comun, un destapador de bolsillo con abridor y navaja, y una navaja pequeña de bolsillo",
         stock: 5,
     },
     {
@@ -330,7 +330,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-6-piezas.jpg",
         precio: 2900,
-        descripcion:"",
+        descripcion:"Set manicuria con estuche organizador, contiene 6 piezas; alicate, lima de acero, pinza para depilar, corta cutículas, tijera y repujador",
         stock: 5,
     },
     {
@@ -339,7 +339,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-9-piezas.jpg",
         precio: 2900,
-        descripcion:"",
+        descripcion:"Set manicuria con estuche organizador, contiene 9 piezas; alicate de corte curvo, recortador de cutículas, limas de uñas, tijera, 2 alicates, 2 espátulas y una pinza",
         stock: 5,
     },
     {
@@ -348,7 +348,7 @@ export const productos = [
         categoria: "manicuria",
         img: "../src/assets/image/set-manicuria-10-piezas.jpg",
         precio: 2900,
-        descripcion:"",
+        descripcion:"Set manicuria con estuche organizador, contiene 10 piezas; alicate de corte curvo, recortador de cutículas, limas de uñas, tijera, 3 alicates, doble espatula, repujador y una pinza",
         stock: 5,
     }
 ];
