@@ -7,6 +7,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import { ContextProvider } from './context/CartContext'
 import Cart from './components/Cart/Cart'
+import Checkout from './components/checkout/Checkout'
+import Footer from './components/footer/Footer'
 
 function App() {
 
@@ -20,8 +22,10 @@ function App() {
           <Route path='/categoria/:categoryId' element= {<ItemListContainer title='VICKYS Regaleria'/>}/>
           <Route path='/producto/:productId' element={<ItemDetailContainer/>}/>
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='/checkout' element={<Checkout/>}/>
           <Route path='*' element={<PageNotFound/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
       </ContextProvider>
     </ChakraProvider>

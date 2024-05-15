@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react'
+import Swal from 'sweetalert2'
 
 const Context = createContext()
 
@@ -29,9 +30,26 @@ export const ContextProvider = ({ children }) => {
     }
 
     const removeItem = (id) =>{
-        const deleteItem = cart.filter((prod) => prod.id !== id)
-        setCart([...deleteItem])
-    }
+        const deleteItem = cart.find((prod) => prod.id === id);
+        if (!deleteItem) 
+            
+        return;
+        Swal.fire({
+            title: `¿Estás seguro de eliminar ${deleteItem.nombre}?`,
+            text: 'Esta acción eliminará el producto del carrito',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const updatedCart = cart.filter((prod) => prod.id !== id);
+                setCart(updatedCart);
+                Swal.fire('¡Eliminado!', '', 'success');
+            }
+        });
+    };
 
     const getTotal = () => {
         const total = cart.reduce((acc, item) => acc + item.precio * item.quantity, 0)
@@ -39,7 +57,20 @@ export const ContextProvider = ({ children }) => {
     }
 
     const clearCart = () => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: 'Esta acción vaciará el carrito',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, vaciar carrito'
+        }).then((result) => {
+            if (result.isConfirmed) {
         setCart([])
+        Swal.fire('¡Carrito vacio!', '', 'success');
+            }
+        });
     }
 
     const getQuantity = () => {
@@ -49,7 +80,13 @@ export const ContextProvider = ({ children }) => {
         })
         return total
     }
-  return (
+
+    const currentQuantity = (productId) => {
+        const product = cart.find((item) => item.id === productId);
+        return product ? product.quantity : 0;
+    };
+
+return (
     <Context.Provider
         value={{
             cart,
@@ -57,14 +94,13 @@ export const ContextProvider = ({ children }) => {
             removeItem,
             getTotal,
             clearCart,
-            getQuantity
+            getQuantity,
+            currentQuantity
         }}
         >
         {children}
     </Context.Provider>
-  )
-
-
+)
 }
 
 export default Context

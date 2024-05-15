@@ -12,6 +12,8 @@ import {
   Button,
   Heading,
   Link as ChakraLink,
+  Box,
+  Divider
 } from '@chakra-ui/react'
 import { RiDeleteBinFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
@@ -20,10 +22,10 @@ const Cart = () => {
     const { cart, getTotal, removeItem, clearCart } = useContext(Context)
 if (cart.lenght === 0){
     return(
-      <Div>
-        <Heading>Todavia no agregaste productos</Heading>
-        <ChakraLink as={Link} to='/'>Ver productos</ChakraLink>
-      </Div>
+      <Box>
+        <Heading color={'#416d6d'}>Todavía no agregaste productos</Heading>
+        <ChakraLink color={'#c86f43'} fontSize={'1.5rem'} as={Link} to='/'>Ver productos</ChakraLink>
+      </Box>
     )
 }else{
   return (
@@ -64,9 +66,14 @@ if (cart.lenght === 0){
               Vaciar Carrito
             </Button>
           </Th>
-          <ChakraLink as={Link}>
-            Finalizar Compra
-          </ChakraLink>
+          <Center height='50px'>
+          <Divider orientation='vertical' />
+          </Center>
+          <Box>
+            <ChakraLink as={Link} to='/checkout'>
+              Finalizar Compra
+            </ChakraLink>
+          </Box>
         </Tr>
       </Tfoot>
     </Table>

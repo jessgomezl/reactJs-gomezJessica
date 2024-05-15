@@ -1,28 +1,33 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getProductById } from '../../data/asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {PropagateLoader} from 'react-spinners'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../../config/firebase'
+import Context from '../../context/CartContext'
+import { Box } from '@chakra-ui/react'
 
 const ItemDetailContainer = () => {
-    const [ producto, setProducto ] = useState([])
+    const [ producto, setProducto ] = useState({})
     const [ loading, setLoading ] = useState(true)
     const { productId } = useParams()
+    const { currentQuantity } = useContext(Context);
 
     const navigate = useNavigate ()
-
     useEffect(() => {
-      getProductById(productId)
-        .then((prod) =>{
-          if(!prod) {
-            navigate ('/*')
-          }
-          else {
-            setProducto(prod)
-          }
-        })
-        .catch((error) => console.log(error))
-        .finally (() => setLoading(false))
+      const getProduct = async() => {
+
+        const queryRef = doc(db, 'productos', productId) 
+        const response = await getDoc(queryRef)
+        const newItem = {
+          ...response.data(),
+          id: response.id
+        }
+        setProducto(newItem)
+        setLoading(false)
+      }
+
+      getProduct()
     }, [productId])
 
   return (
@@ -31,7 +36,9 @@ const ItemDetailContainer = () => {
         loading ?
           <PropagateLoader color="#b322ca" />
         :
-          <ItemDetail {...producto}/>
+        <Box >
+          <ItemDetail {...producto} currentQuantity={currentQuantity(productId)}/>
+        </Box>
       }
     </>
   )
