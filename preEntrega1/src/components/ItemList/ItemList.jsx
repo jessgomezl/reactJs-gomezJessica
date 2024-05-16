@@ -1,10 +1,11 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
 import Item from '../Item/Item'
+import styles from './ItemList.module.scss'
 
 const ItemList = ({products}) => {
   return (
-    <Box className='contenedorCard'>
+    <Box className={styles.contenedorCard}>
       {products.map((elem) => (
       <Box key={elem.id}>
         <Item {...elem} />

@@ -1,13 +1,12 @@
 import { Box } from "@chakra-ui/react";
 import React, { useState, useEffect } from 'react';
-import { getProducts, getProductsByCategory } from "../../data/asyncMock";
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import { db } from "../../config/firebase";
-import { Timestamp, collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
-const ItemListContainer = ({title}) => {
+const ItemListContainer = () => {
   const [ products, setProducts ] = useState([])
   const [ loading, setLoading] = useState(true)
   const { categoryId } = useParams ()
@@ -33,7 +32,6 @@ const ItemListContainer = ({title}) => {
       })
       setProducts(productos)
       setLoading(false)
-
     }
     getData()
   }, [categoryId])

@@ -1,5 +1,4 @@
-import './App.css'
-import NavBar from '../src/components/NavBar/NavBar'
+import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -9,6 +8,7 @@ import { ContextProvider } from './context/CartContext'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/checkout/Checkout'
 import Footer from './components/footer/Footer'
+
 
 function App() {
 

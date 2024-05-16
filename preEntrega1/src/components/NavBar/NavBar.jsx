@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './NavBar.module.scss'
 import CartWidget from '../CartWidget/CartWidget'
 import banner from '../../assets/image/banner-cir.png'
 import {
@@ -11,22 +12,22 @@ import {
     Flex,
   } from '@chakra-ui/react'
   import { Link } from 'react-router-dom';
-  import styles from '../modules/styles.module.css'
+
 
 
 const NavBar = () => {
   return (
-    <Box backgroundColor='indigo'>
-      <Flex  w='100%' h='200px' alignItems='center'>
-        <Box margin='50px' boxSize='150px'> <img src={banner} /></Box>
+    <Box className={styles.navbar}>
+      <Flex>
+        <Box className={styles.banner}> <img src={banner} /></Box>
       </Flex>
-    <Flex gap='30px' className={styles.menu} >
+    <Flex className={styles.menu} >
         <Menu isLazy>
             <MenuButton className={styles.menubutton} >CATEGORIAS</MenuButton>
         <MenuList className={styles.menulist}>
-            <MenuItem><Link to='/categoria/accesorios'>ACCESORIOS</Link></MenuItem>
-            <MenuItem><Link to='/categoria/belleza'>BELLEZA</Link></MenuItem>
-            <MenuItem><Link to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
+            <MenuItem><Link className={styles.NavBarLink} to='/categoria/accesorios'>ACCESORIOS</Link></MenuItem>
+            <MenuItem><Link className={styles.NavBarLink} to='/categoria/belleza'>BELLEZA</Link></MenuItem>
+            <MenuItem><Link className={styles.NavBarLink} to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
         </MenuList>
         </Menu>
       </Flex>

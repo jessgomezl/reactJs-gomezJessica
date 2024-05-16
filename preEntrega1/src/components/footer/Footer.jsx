@@ -1,4 +1,4 @@
-import { Box, Divider,Center, Th } from '@chakra-ui/react'
+import { Box, Divider } from '@chakra-ui/react'
 import React from 'react'
 import { MdFacebook } from "react-icons/md";
 import { RiInstagramFill,  RiWhatsappFill  } from "react-icons/ri";
@@ -8,21 +8,17 @@ const Footer = () => {
   return (
     <Footer>
         <Box>
-            <Center height='50px'>
-                <Divider orientation='vertical' />
-            </Center>
-        <Box>
-            <Th>
+            <Box>
                 SEGUINOS
                 <MdFacebook />
                 <RiInstagramFill />
-            </Th>
-            <Th>
+            </Box>
+            <Divider orientation='vertical' />
+            <Box>
                 CONTACTANOS
                 <RiWhatsappFill />
                 <MdEmail />
-            </Th>
-        </Box>
+            </Box>
         </Box>
     </Footer>
 )
