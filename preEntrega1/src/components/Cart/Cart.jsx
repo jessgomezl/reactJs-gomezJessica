@@ -33,10 +33,11 @@ const Cart = () => {
       });
     }
   }, [cart]);
+
   if (cart.length === 0) {
     return (
       <Box>
-        <ChakraLink color={'#c86f43'} fontSize={'1.5rem'} as={Link} to='/'>Ver productos</ChakraLink>
+        <ChakraLink as={Link} color={'#c86f43'} fontSize={'1.5rem'} to='/'>Ver productos</ChakraLink>
       </Box>
     );
   } else {
@@ -57,8 +58,8 @@ const Cart = () => {
               <Tr key={prod.id}>
                 <Td>{prod.nombre}</Td>
                 <Td>{prod.quantity}</Td>
-                <Td>{prod.precio}</Td>
-                <Td>{prod.precio * prod.quantity}</Td>
+                <Td>${prod.precio}</Td>
+                <Td>${prod.precio * prod.quantity}</Td>
                 <Td>
                   <Button onClick={() => removeItem(prod.id)}>
                     <RiDeleteBinFill />

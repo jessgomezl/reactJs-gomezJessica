@@ -75,7 +75,7 @@ const ItemDetail = ({nombre, precio, stock, img, id, descripcion, categoria, cur
           </Box>
         </Box>
         :
-        <ItemCount stock={stock} initialValue={1} onAdd={onAdd}maxAvailable={maxAvailable}/>
+        <ItemCount stock={stock} initialValue={1} onAdd={onAdd} maxAvailable={maxAvailable}/>
       }
     </Card>
   </>

@@ -1,20 +1,21 @@
 import React, { useContext } from 'react'
 import { PiShoppingCartFill } from "react-icons/pi";
 import Context from '../../context/CartContext';
-import { Badge, Box, Link } from '@chakra-ui/react';
+import { Badge, Box, Link as ChakraLink } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import styles from './CartWidget.module.scss'
 
 const CartWidget = () => {
-  const { getQuantity } =useContext(Context)
+  const { getQuantity } = useContext(Context);
 
   return (
-    <Link className={styles.carrito}  to='/cart'>
-      <Box className={styles.contCart} >
+    <ChakraLink as={Link} to='/cart' className={styles.carrito}>
+      <Box className={styles.contCart}>
         <PiShoppingCartFill className={styles.icon} />
-        <Badge className={styles.contador} >{getQuantity()}</Badge>
+        <Badge className={styles.contador}>{getQuantity()}</Badge>
       </Box>
-    </Link>
+    </ChakraLink>
   )
 }
 
-export default CartWidget
+export default CartWidget;

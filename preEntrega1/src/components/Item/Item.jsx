@@ -26,8 +26,8 @@ const Item = ({nombre, precio, img, stock,id}) => {
                 Ver detalle
                 </Link>
             </Button>
-            </ButtonGroup>
-            </CardFooter>
+        </ButtonGroup>
+        </CardFooter>
     </Card>
   )
 }
