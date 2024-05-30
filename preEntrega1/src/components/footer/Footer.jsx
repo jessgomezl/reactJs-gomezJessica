@@ -6,21 +6,19 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <Footer>
+    <Box>
         <Box>
-            <Box>
-                SEGUINOS
-                <MdFacebook />
-                <RiInstagramFill />
-            </Box>
-            <Divider orientation='vertical' />
-            <Box>
-                CONTACTANOS
-                <RiWhatsappFill />
-                <MdEmail />
-            </Box>
+            SEGUINOS
+            <MdFacebook />
+            <RiInstagramFill />
         </Box>
-    </Footer>
+        <Divider orientation='vertical' />
+        <Box>
+            CONTACTANOS
+            <RiWhatsappFill />
+            <MdEmail />
+        </Box>
+    </Box>
 )
 }
 

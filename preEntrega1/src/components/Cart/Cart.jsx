@@ -18,7 +18,6 @@ import {
 import { RiDeleteBinFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import styles from './Cart.module.scss'
 
 const Cart = () => {
   const { cart, getTotal, removeItem, clearCart } = useContext(Context);
@@ -42,7 +41,7 @@ const Cart = () => {
     );
   } else {
     return (
-      <TableContainer className={styles.cart}>
+      <TableContainer >
         <Table variant='striped' colorScheme='teal'>
           <Thead>
             <Tr>

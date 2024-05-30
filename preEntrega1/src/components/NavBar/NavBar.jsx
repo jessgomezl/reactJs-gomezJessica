@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './NavBar.module.scss'
 import CartWidget from '../CartWidget/CartWidget'
 import banner from '../../assets/image/banner-cir.png'
 import {
@@ -17,23 +16,23 @@ import {
 
 const NavBar = () => {
   return (
-    <Box className={styles.navbar}>
+    <Box>
       <Flex>
-        <Box className={styles.banner}> <img src={banner} /></Box>
+        <Box > <img src={banner} /></Box>
       </Flex>
-    <Flex className={styles.menu} >
-        <Menu isLazy>
-            <MenuButton className={styles.menubutton} >CATEGORIAS</MenuButton>
-        <MenuList className={styles.menulist}>
-            <MenuItem><Link className={styles.NavBarLink} to='/categoria/accesorios'>ACCESORIOS</Link></MenuItem>
-            <MenuItem><Link className={styles.NavBarLink} to='/categoria/belleza'>BELLEZA</Link></MenuItem>
-            <MenuItem><Link className={styles.NavBarLink} to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
+    <Flex >
+      <Menu isLazy>
+          <MenuButton >CATEGORIAS</MenuButton>
+        <MenuList >
+          <MenuItem><Link to='/categoria/accesorios'>ACCESORIOS</Link></MenuItem>
+          <MenuItem><Link to='/categoria/belleza'>BELLEZA</Link></MenuItem>
+          <MenuItem><Link to='/categoria/manicuria'>MANICURIA</Link></MenuItem>
         </MenuList>
-        </Menu>
-      </Flex>
-      <Link to='/cart'>
-        <CartWidget className={styles.carrito}/>
-      </Link>
+      </Menu>
+    </Flex>
+      <Box >
+        <CartWidget />
+      </Box>
     </Box>
   )
 }

@@ -6,7 +6,7 @@ import {
     Button,
     Heading,
     Box,
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react'
 import { Timestamp, addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase'
 import Context from '../../context/CartContext'
@@ -17,7 +17,7 @@ const Checkout = () => {
     const [ user, setUser ] = useState({
         name:'',
         surname:'',
-        phone: isNaN ,
+        phone:'',
         email:''
     })
 
@@ -35,13 +35,13 @@ const Checkout = () => {
 
     const validateForm = () => {
         const errors = {}
-        if(user.name === ' ' || !isNaN){
+        if(user.name === ' '){
             errors.name= "El nombre no puede contener numeros ni espacios"
         }
-        if (user.surname === ' ' || !isNaN) {
+        if (user.surname === ' ') {
             errors.surname = "El apellido no puede contener numeros ni espacios"
         }
-        if (user.phone.length !== 10 || isNaN) {
+        if (user.phone.length !== 10) {
             errors.phone = "El teléfono debe contener 10 numeros"
         }
         if (user.email.indexOf('@') === -1) {
@@ -71,8 +71,12 @@ const Checkout = () => {
                             stock: currentStock - item.quantity
                         })
                     }else {
-                        // mostrarle al usuario el error que no tiene suficiente stock
-                        console.log(`No hay suficiente stock para ${item.name}`)
+                        Swal.fire({
+                            title: 'Error',
+                            text: `No hay suficiente stock para ${item.name}`,
+                            icon: 'error',
+                            confirmButtonText: 'Ok'
+                        })
                     }
                     const order = {
                         buyer: user,
@@ -93,27 +97,60 @@ const Checkout = () => {
                     })
                     }
             } catch (error) {
-                console.log(error)
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Hubo un problema al procesar tu orden. Por favor intenta nuevamente.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                })
             }
         }
     }
 
-return (
-    <Box>
-        <Heading >DATOS DEL PAGO</Heading>
-        <FormControl>
-            <FormLabel>Nombre</FormLabel>
-            <Input type='tex' placeholder='Ingrese su nombre'onChange={updateUser}/>
-            <FormLabel>Apellido</FormLabel>
-            <Input type='text' placeholder='Ingrese su apellido'onChange={updateUser}/>
-            <FormLabel>Telefono</FormLabel>
-            <Input type='text' placeholder='Ingrese su teléfono'onChange={updateUser}/>
-            <FormLabel>Email</FormLabel>
-            <Input type='email' placeholder='Ingrese su email'onChange={updateUser}/> 
-        <Button onClick={getOrder}>Finalizar compra</Button>
-        </FormControl>
-    </Box>
-)
-}
+        return (
+        <Box>
+            <Heading>DATOS DEL PAGO</Heading>
+            <FormControl>
+                <FormLabel>Nombre</FormLabel>
+                <Input
+                    type='text'
+                    placeholder='Ingrese su nombre'
+                    name='name'
+                    value={user.name}
+                    onChange={updateUser}
+                />
+                {error.name && <Text color='red.500'>{error.name}</Text>}
+                <FormLabel>Apellido</FormLabel>
+                <Input
+                    type='text'
+                    placeholder='Ingrese su apellido'
+                    name='surname'
+                    value={user.surname}
+                    onChange={updateUser}
+                />
+                {error.surname && <Text color='red.500'>{error.surname}</Text>}
+                <FormLabel>Teléfono</FormLabel>
+                <Input
+                    type='text'
+                    placeholder='Ingrese su teléfono'
+                    name='phone'
+                    value={user.phone}
+                    onChange={updateUser}
+                />
+                {error.phone && <Text color='red.500'>{error.phone}</Text>}
+                <FormLabel>Email</FormLabel>
+                <Input
+                    type='email'
+                    placeholder='Ingrese su email'
+                    name='email'
+                    value={user.email}
+                    onChange={updateUser}
+                />
+                {error.email && <Text color='red.500'>{error.email}</Text>}
+                <Button onClick={getOrder}>Finalizar compra</Button>
+            </FormControl>
+        </Box>
+    )
+    }
 
-export default Checkout
+    export default Checkout
