@@ -4,23 +4,19 @@ import Swal from 'sweetalert2'
 const Context = createContext()
 
 export const ContextProvider = ({ children }) => {
-    const [ cart, setCart ] = useState ([])
+    const [cart, setCart] = useState([])
 
-    const addItem = (productToAdd, quantity) =>{
-        const newProduct = {
-            ...productToAdd,
-            quantity
-        }
-        if(isInCart(newProduct.id)){
-
+    const addItem = (productToAdd, quantity) => {
+        const newProduct = { ...productToAdd, quantity }
+        if (isInCart(newProduct.id)) {
             const updatedCart = cart.map((el) => {
-                if(el.id === newProduct.id){
-                    return {...el, quantity: el.quantity + newProduct.quantity}
+                if (el.id === newProduct.id) {
+                    return { ...el, quantity: el.quantity + newProduct.quantity }
                 }
                 return el
             })
             setCart(updatedCart)
-        }else{
+        } else {
             setCart([...cart, newProduct])
         }
     }
@@ -29,11 +25,9 @@ export const ContextProvider = ({ children }) => {
         return cart.some((prod) => prod.id === id)
     }
 
-    const removeItem = (id) =>{
-        const deleteItem = cart.find((prod) => prod.id === id);
-        if (!deleteItem) 
-            
-        return;
+    const removeItem = (id) => {
+        const deleteItem = cart.find((prod) => prod.id === id)
+        if (!deleteItem) return
         Swal.fire({
             title: `¿Estás seguro de eliminar ${deleteItem.nombre}?`,
             text: 'Esta acción eliminará el producto del carrito',
@@ -44,19 +38,19 @@ export const ContextProvider = ({ children }) => {
             confirmButtonText: 'Sí, eliminar'
         }).then((result) => {
             if (result.isConfirmed) {
-                const updatedCart = cart.filter((prod) => prod.id !== id);
-                setCart(updatedCart);
-                Swal.fire('¡Eliminado!', '', 'success');
+                const updatedCart = cart.filter((prod) => prod.id !== id)
+                setCart(updatedCart)
+                Swal.fire('¡Eliminado!', '', 'success')
             }
-        });
-    };
+        })
+    }
 
     const getTotal = () => {
         const total = cart.reduce((acc, item) => acc + item.precio * item.quantity, 0)
         return total
     }
 
-    const clearCart = () => {
+    const clearCart = (callback) => {
         Swal.fire({
             title: '¿Estás seguro?',
             text: 'Esta acción vaciará el carrito',
@@ -67,10 +61,12 @@ export const ContextProvider = ({ children }) => {
             confirmButtonText: 'Sí, vaciar carrito'
         }).then((result) => {
             if (result.isConfirmed) {
-        setCart([])
-        Swal.fire('¡Carrito vacio!', '', 'success');
+                setCart([])
+                Swal.fire('¡Carrito vacio!', '', 'success').then(() => {
+                    if (callback) callback()
+                })
             }
-        });
+        })
     }
 
     const getQuantity = () => {
@@ -82,25 +78,25 @@ export const ContextProvider = ({ children }) => {
     }
 
     const currentQuantity = (productId) => {
-        const product = cart.find((item) => item.id === productId);
-        return product ? product.quantity : 0;
-    };
+        const product = cart.find((item) => item.id === productId)
+        return product ? product.quantity : 0
+    }
 
-return (
-    <Context.Provider
-        value={{
-            cart,
-            addItem,
-            removeItem,
-            getTotal,
-            clearCart,
-            getQuantity,
-            currentQuantity
-        }}
+    return (
+        <Context.Provider
+            value={{
+                cart,
+                addItem,
+                removeItem,
+                getTotal,
+                clearCart,
+                getQuantity,
+                currentQuantity
+            }}
         >
-        {children}
-    </Context.Provider>
-)
+            {children}
+        </Context.Provider>
+    )
 }
 
 export default Context

@@ -1,4 +1,4 @@
-import React,  { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {
     FormLabel,
     FormControl,
@@ -6,6 +6,7 @@ import {
     Button,
     Heading,
     Box,
+    Text,
 } from '@chakra-ui/react'
 import { Timestamp, addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../../config/firebase'
@@ -14,14 +15,14 @@ import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 
 const Checkout = () => {
-    const [ user, setUser ] = useState({
-        name:'',
-        surname:'',
-        phone:'',
-        email:''
+    const [user, setUser] = useState({
+        name: '',
+        surname: '',
+        phone: '',
+        email: ''
     })
 
-    const [ error, setError] = useState({})
+    const [error, setError] = useState({})
     const { cart, getTotal, clearCart } = useContext(Context)
 
     const updateUser = (event) => {
@@ -35,16 +36,22 @@ const Checkout = () => {
 
     const validateForm = () => {
         const errors = {}
-        if(user.name === ' '){
-            errors.name= "El nombre no puede contener numeros ni espacios"
+        if (!user.name.trim()) {
+            errors.name = "El nombre es requerido"
         }
-        if (user.surname === ' ') {
-            errors.surname = "El apellido no puede contener numeros ni espacios"
+        if (!/^[a-zA-Z]+$/.test(user.name)) {
+            errors.name = "El nombre no puede contener números ni espacios"
         }
-        if (user.phone.length !== 10) {
-            errors.phone = "El teléfono debe contener 10 numeros"
+        if (!user.surname.trim()) {
+            errors.surname = "El apellido es requerido"
         }
-        if (user.email.indexOf('@') === -1) {
+        if (!/^[a-zA-Z]+$/.test(user.surname)) {
+            errors.surname = "El apellido no puede contener números ni espacios"
+        }
+        if (!/^\d{10}$/.test(user.phone)) {
+            errors.phone = "El teléfono debe contener 10 números"
+        }
+        if (!user.email.includes('@')) {
             errors.email = "El email debe contener @"
         }
 
@@ -53,49 +60,55 @@ const Checkout = () => {
     }
 
     const getOrder = async () => {
-        const isForValid = validateForm ()
+        const isFormValid = validateForm()
 
-        if(isForValid){
-
-            const ordersCollection = collection(db, 'orders')   
+        if (isFormValid) {
+            const ordersCollection = collection(db, 'orders')
 
             try {
-                for(const item of cart) {
+                for (const item of cart) {
                     const productRef = doc(db, 'productos', item.id)
                     const productDoc = await getDoc(productRef)
 
+                    if (!productDoc.exists()) {
+                        throw new Error(`Producto ${item.id} no encontrado`)
+                    }
+
                     const currentStock = productDoc.data().stock
 
-                    if(currentStock >= item.quantity) {
+                    if (currentStock >= item.quantity) {
                         await updateDoc(productRef, {
                             stock: currentStock - item.quantity
                         })
-                    }else {
+                    } else {
                         Swal.fire({
                             title: 'Error',
                             text: `No hay suficiente stock para ${item.name}`,
                             icon: 'error',
                             confirmButtonText: 'Ok'
                         })
+                        return
                     }
-                    const order = {
-                        buyer: user,
-                        cart: cart,
-                        total: getTotal(),
-                        fechaDeCompra: Timestamp.now() 
-                    }
-                    
-                    const orderDocRef = await addDoc(ordersCollection, order)
-                    Swal.fire({
-                        title: 'Gracias por tu compra',
-                        text: `El número de orden es: ${orderDocRef.id}`,
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    }).then(()=> {
-                        clearCart()
+                }
+
+                const order = {
+                    buyer: user,
+                    cart: cart,
+                    total: getTotal(),
+                    fechaDeCompra: Timestamp.now()
+                }
+
+                const orderDocRef = await addDoc(ordersCollection, order)
+                Swal.fire({
+                    title: 'Gracias por tu compra',
+                    text: `El número de orden es: ${orderDocRef.id}`,
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                }).then(() => {
+                    clearCart(() => {
                         navigate('/')
                     })
-                    }
+                })
             } catch (error) {
                 Swal.fire({
                     title: 'Error',
@@ -107,7 +120,7 @@ const Checkout = () => {
         }
     }
 
-        return (
+    return (
         <Box>
             <Heading>DATOS DEL PAGO</Heading>
             <FormControl>
@@ -118,6 +131,7 @@ const Checkout = () => {
                     name='name'
                     value={user.name}
                     onChange={updateUser}
+                    autoComplete='name'
                 />
                 {error.name && <Text color='red.500'>{error.name}</Text>}
                 <FormLabel>Apellido</FormLabel>
@@ -127,6 +141,7 @@ const Checkout = () => {
                     name='surname'
                     value={user.surname}
                     onChange={updateUser}
+                    autoComplete='family-name'
                 />
                 {error.surname && <Text color='red.500'>{error.surname}</Text>}
                 <FormLabel>Teléfono</FormLabel>
@@ -136,6 +151,7 @@ const Checkout = () => {
                     name='phone'
                     value={user.phone}
                     onChange={updateUser}
+                    autoComplete='tel'
                 />
                 {error.phone && <Text color='red.500'>{error.phone}</Text>}
                 <FormLabel>Email</FormLabel>
@@ -145,12 +161,13 @@ const Checkout = () => {
                     name='email'
                     value={user.email}
                     onChange={updateUser}
+                    autoComplete='email'
                 />
                 {error.email && <Text color='red.500'>{error.email}</Text>}
                 <Button onClick={getOrder}>Finalizar compra</Button>
             </FormControl>
         </Box>
     )
-    }
+}
 
-    export default Checkout
+export default Checkout

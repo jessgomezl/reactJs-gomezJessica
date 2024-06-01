@@ -18,6 +18,7 @@ import {
 import { RiDeleteBinFill } from "react-icons/ri";
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import styles from './Cart.module.css';
 
 const Cart = () => {
   const { cart, getTotal, removeItem, clearCart } = useContext(Context);
@@ -35,8 +36,8 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <Box>
-        <ChakraLink as={Link} color={'#c86f43'} fontSize={'1.5rem'} to='/'>Ver productos</ChakraLink>
+      <Box className={styles.boxVer}>
+        <ChakraLink as={Link} className={styles.verProductos} to='/'>Ver productos</ChakraLink>
       </Box>
     );
   } else {
