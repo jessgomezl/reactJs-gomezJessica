@@ -1,19 +1,22 @@
 import React from 'react';
-import { Card, CardBody, CardFooter,Stack, Heading, Text, Divider, ButtonGroup, Button, Image } from '@chakra-ui/react';
+import { Card, CardBody, CardFooter,Stack, Text, Divider, ButtonGroup, Button, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import styles from './Item.module.css';
 
-const Item = ({nombre, precio, img, stock,id}) => {
+const Item = ({nombre, precio, img, id}) => {
   return (
-    <Card maxW='sm'>
-        <CardBody>
-            <Image
+    <Card className={styles.card}>
+        <CardBody >
+            <Image className={styles.imagen}
                 src={img}
                 alt={nombre}
                 borderRadius='lg'
             />
             <Stack mt='6' spacing='3'>
-            <Heading size='md'>{nombre}</Heading>
-            <Text color='blue.600' fontSize='2xl'>
+            <Text className={styles.nombre}>
+                {nombre}
+                </Text>
+            <Text className={styles.precio}>
                 ${precio}
             </Text>
             </Stack>
@@ -21,7 +24,7 @@ const Item = ({nombre, precio, img, stock,id}) => {
             <Divider />
         <CardFooter>
         <ButtonGroup spacing='2'>
-            <Button variant="ghost" color="#c86f43" >
+            <Button variant="outline" color="#C92C8D" >
                 <Link to={`/producto/${id}`}>
                 Ver detalle
                 </Link>

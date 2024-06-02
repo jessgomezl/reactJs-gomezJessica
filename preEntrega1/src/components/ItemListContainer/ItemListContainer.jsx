@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import React, { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
@@ -37,14 +37,14 @@ const ItemListContainer = () => {
   }, [categoryId])
 
   return (
-    <Box>
+    <Flex justifyContent={'center'} >
       {
         loading ?
         <PropagateLoader color="#c936d6" />
         :
         <ItemList products = {products} />
       }
-    </Box>
+    </Flex>
   )
 }
 

@@ -1,0 +1,19 @@
+.card{
+    height: 490px ;
+    width: 280px ;
+}
+.imagen{
+    width: 245px;
+    height: 290px ;
+}
+.nombre{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+
+}
+.precio{
+    font-size: 22px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(176, 228, 79) ;
+}
