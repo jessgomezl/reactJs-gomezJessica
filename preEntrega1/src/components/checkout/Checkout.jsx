@@ -13,6 +13,7 @@ import { db } from '../../config/firebase'
 import Context from '../../context/CartContext'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
+import styles from './Checkout.module.css';
 
 const Checkout = () => {
     const [user, setUser] = useState({
@@ -121,10 +122,10 @@ const Checkout = () => {
     }
 
     return (
-        <Box>
-            <Heading>DATOS DEL PAGO</Heading>
+        <Box className={styles.containerCheckout} >
+            <Heading className={styles.datos} >DATOS DEL PAGO</Heading>
             <FormControl>
-                <FormLabel>Nombre</FormLabel>
+                <FormLabel className={styles.formLabel}>Nombre</FormLabel>
                 <Input
                     type='text'
                     placeholder='Ingrese su nombre'
@@ -134,7 +135,7 @@ const Checkout = () => {
                     autoComplete='name'
                 />
                 {error.name && <Text color='red.500'>{error.name}</Text>}
-                <FormLabel>Apellido</FormLabel>
+                <FormLabel className={styles.formLabel}>Apellido</FormLabel>
                 <Input
                     type='text'
                     placeholder='Ingrese su apellido'
@@ -144,7 +145,7 @@ const Checkout = () => {
                     autoComplete='family-name'
                 />
                 {error.surname && <Text color='red.500'>{error.surname}</Text>}
-                <FormLabel>Teléfono</FormLabel>
+                <FormLabel className={styles.formLabel}>Teléfono</FormLabel>
                 <Input
                     type='text'
                     placeholder='Ingrese su teléfono'
@@ -154,7 +155,7 @@ const Checkout = () => {
                     autoComplete='tel'
                 />
                 {error.phone && <Text color='red.500'>{error.phone}</Text>}
-                <FormLabel>Email</FormLabel>
+                <FormLabel className={styles.formLabel}>Email</FormLabel>
                 <Input
                     type='email'
                     placeholder='Ingrese su email'

@@ -5,3 +5,8 @@
     justify-content: center;
     gap: 35px;
 }
+@media (max-width:320px){
+    .itemList{
+        padding: 40px;
+    }
+}

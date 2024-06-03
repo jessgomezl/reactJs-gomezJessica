@@ -1,0 +1,26 @@
+.containerCheckout{
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+}
+.datos{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:  rgb(69, 223, 240);
+}
+.formLabel{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:  rgb(69, 223, 24);
+}
+
+@media (max-width:320px){
+    .containerCheckout{
+        padding: 20px;
+    }
+    .datos{
+        font-size: 15px;
+    }
+    .formLabel{
+        font-size: 12px;
+    }
+
+}

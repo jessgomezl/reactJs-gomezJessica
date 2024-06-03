@@ -1,8 +1,30 @@
 .boxVer{
-display: flex;
+    height: 200px;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
 .verProductos{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
-    background-color: cyan;
+}
+.verProductos:hover{
+    color: rgb(176, 228, 79);
+}
+.containerTable{
+    padding: 50px;
+}
+@media (max-width:320px){
+    .boxVer{
+        height: 100px;
+        padding: 10px;
+    }
+    .verProductos{
+        font-size: 17px;
+    }
+    .containerTable{
+        padding: 20px;
+    }
 }

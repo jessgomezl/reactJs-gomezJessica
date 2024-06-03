@@ -81,3 +81,52 @@
 .containerDetailSeguir:hover{
     color: rgb(176, 228, 79);
 }
+@media (max-width:320px){
+    .containerItemDetail{
+        padding: 20px;
+        height: 900px;
+    }
+    .detailCategoria{
+        font-size: 19;
+    }
+    .containerCard{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .cardImage{
+        height: 290px;
+        width: 200px;
+    }
+    .detailNombre{
+        font-size: 19px;
+    }
+    .detailNombre:hover{
+        font-size: 21px;
+    }
+    .detailDescripcion{
+        font-size: 15px;
+        word-spacing: 3px;
+    }
+    .detailPrecio{
+        font-size: 20px;
+    }
+    .detailStock{
+        font-size: 17px;
+    }
+    .detailCantidad{
+        font-size: 17px;
+    }
+    .containerQuantity{
+        gap: 20px;
+    }
+    .detailCarrito{
+        font-size: 16px;
+    }
+    .detailSeguirComprando{
+        font-size: 16px;
+    }
+    .detailIcon{
+        height: 20px;
+        width: 20px;
+    }
+}

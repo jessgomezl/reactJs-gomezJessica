@@ -42,7 +42,7 @@ const Cart = () => {
     );
   } else {
     return (
-      <TableContainer >
+      <TableContainer className={styles.containerTable}>
         <Table variant='striped' colorScheme='teal'>
           <Thead>
             <Tr>

@@ -5,3 +5,10 @@
 .Badge{
     background-color: rgb(165, 198, 198);
 }
+
+@media (max-width:320px){
+    .CartWidget{
+        height: 19px;
+        width: 19px;
+    }
+}

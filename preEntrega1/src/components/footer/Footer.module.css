@@ -30,7 +30,6 @@
 .texContactanos{
     font-size: 19px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
 }
 .whatsapp{
     height: 30px;
@@ -39,4 +38,34 @@
 .email{
     height: 30px;
     width: 30px;
+}
+
+@media (max-width:320px){
+    .footer{
+        padding: 20px;
+        gap: 7px;
+    }
+    .textSeguinos{
+        font-size: 13px;
+    }
+    .facebook{
+        height: 20px;
+        width: 20px;
+    }
+    .instagram{
+        height: 20px;
+        width: 20px;
+    }
+    .texContactanos{
+        font-size: 13px;
+    
+    }
+    .whatsapp{
+        height: 20px;
+        width: 20px;
+    }
+    .email{
+        height: 20px;
+        width: 20px;
+    }
 }

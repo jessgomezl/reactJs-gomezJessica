@@ -23,3 +23,19 @@
 .cardFooter{
     background-color: rgb(244, 165, 155);
 }
+@media (max-width:320px){
+    .card{
+        height: 470px;
+        width: 200px;
+    }
+    .imagen{
+        width: 190px;
+        height: 250px;
+    }
+    .nombre{
+        font-size: 17px;
+    }
+    .precio{
+        font-size: 17px;
+    }
+}

@@ -17,19 +17,40 @@
     align-items: center;
 }
 .categorias{
-    font-size:19px ;
+    font-size:22px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .categorias:hover{
     color: rgb(69, 223, 240);
     transition: all 0.2s;
-    font-size: 21px;
+    font-size: 24px;
 }
-
 .containerCartwidget{
     margin-right: 24px;
 }
 .containerCartwidget:hover{
     color: rgb(69, 223, 240);
     transition: all 0.2s;
+}
+
+@media (max-width:320px){
+    .containerBanner{
+        padding: 10px 35px 10px;
+    }
+    .banner{
+        width: 60px;
+        height: 60px;
+    }
+    .containerMenuCartwidget{
+        gap: 20px;
+    }
+    .categorias{
+        font-size:13px;
+    }
+    .categorias:hover{
+        font-size: 15px;
+    }
+    .containerCartwidget{
+        margin-right: 15px;
+    }
 }

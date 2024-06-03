@@ -19,3 +19,14 @@ font-size: 22px;
     border: 2px solid rgb(18, 17, 17);
     border-image: initial;
 }
+@media (max-width:320px){
+    .containerCount{
+        gap: 8px;
+    }
+    .cantidad{
+        font-size: 13px;
+    }
+    .buttonAgregar{
+        font-size: 13px;
+    }
+}
