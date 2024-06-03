@@ -6,7 +6,7 @@ import styles from './Item.module.css';
 const Item = ({nombre, precio, img, id}) => {
   return (
     <Card className={styles.card}>
-        <CardBody >
+        <CardBody className={styles.cardBody} >
             <Image className={styles.imagen}
                 src={img}
                 alt={nombre}
@@ -15,16 +15,16 @@ const Item = ({nombre, precio, img, id}) => {
             <Stack mt='6' spacing='3'>
             <Text className={styles.nombre}>
                 {nombre}
-                </Text>
+            </Text>
             <Text className={styles.precio}>
                 ${precio}
             </Text>
             </Stack>
             </CardBody>
             <Divider />
-        <CardFooter>
+        <CardFooter className={styles.cardFooter}>
         <ButtonGroup spacing='2'>
-            <Button variant="outline" color="#C92C8D" >
+            <Button variant="outline" color="#C92C8D">
                 <Link to={`/producto/${id}`}>
                 Ver detalle
                 </Link>

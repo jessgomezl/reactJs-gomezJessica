@@ -1,0 +1,21 @@
+.containerCount{
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+}
+.cantidad{
+font-size: 22px;
+}
+.button{
+    font-size: 17px;
+    appearance: auto;
+    border: 2px solid rgb(18, 17, 17);
+    border-image: initial;
+}
+.buttonAgregar{
+    height: 40px;
+    font-size: 19px;
+    appearance: auto;
+    border: 2px solid rgb(18, 17, 17);
+    border-image: initial;
+}

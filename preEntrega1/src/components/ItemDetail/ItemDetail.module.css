@@ -1,0 +1,83 @@
+.containerItemDetail{
+    justify-content: center;
+    padding: 50px;
+    height: 800px;
+    background-color: rgb(244, 165, 155);
+}
+.detailCategoria{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color: rgb(171, 54, 184);
+    font: bold;
+}
+.containerCard{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+.cardImage{
+    height: 470px;
+    width: 350px;
+}
+.detailNombre{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+.detailNombre:hover{
+    color: rgb(171, 54, 184);
+    transition: all 0.2s;
+    font-size: 43px;
+}
+.detailDescripcion{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    word-spacing: 3px;
+}
+.detailDescripcion:hover{
+    color:rgb(69, 223, 240);
+}
+.detailPrecio{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 27px;
+    color: rgb(69, 223, 240);
+}
+.detailStock{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    color: rgb(187, 21, 21);
+}
+.detailCantidad{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+    color: rgb(69, 223, 240);
+}
+.containerQuantity{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+}
+.containerDetailCarrito{
+    display: flex;
+}
+.detailCarrito{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+.containerDetailCarrito:hover{
+    color: rgb(176, 228, 79);
+}
+.containerDetailSeguir{
+    display: flex;
+}
+.detailSeguirComprando{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 22px;
+}
+.detailIcon{
+    height: 30px;
+    width: 30px;
+}
+.containerDetailSeguir:hover{
+    color: rgb(176, 228, 79);
+}

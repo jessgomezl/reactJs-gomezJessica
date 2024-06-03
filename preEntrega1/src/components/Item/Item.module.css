@@ -1,10 +1,13 @@
 .card{
-    height: 490px ;
-    width: 280px ;
+    height: 515px ;
+    width: 240px ;
+}
+.cardBody{
+    background-color:rgb(244, 165, 155);
 }
 .imagen{
-    width: 245px;
-    height: 290px ;
+    width: 220px;
+    height: 250px ;
 }
 .nombre{
     font-size: 20px;
@@ -15,5 +18,8 @@
 .precio{
     font-size: 22px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(176, 228, 79) ;
+    color: rgb(69, 223, 240);
+}
+.cardFooter{
+    background-color: rgb(244, 165, 155);
 }
